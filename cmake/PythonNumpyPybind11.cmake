@@ -48,9 +48,9 @@ if (WIN32)
   set(PYTHON_LIBRARIES ${PYTHON_LIBRARY_DIR}/../../libs/python3.lib)
   if(${PYTHON_VERSION} EQUAL == "3.7") 
 	set(PYTHON_LIBRARIES ${PYTHON_LIBRARY_DIR}/../../libs/python37.lib)
-  else if(${PYTHON_VERSION} EQUAL "3.6) 
+  else if(${PYTHON_VERSION} EQUAL "3.6") 
 	set(PYTHON_LIBRARIES ${PYTHON_LIBRARY_DIR}/../../libs/python36.lib)
-  else if(${PYTHON_VERSION} EQUAL "3.5) 
+  else if(${PYTHON_VERSION} EQUAL "3.5") 
 	set(PYTHON_LIBRARIES ${PYTHON_LIBRARY_DIR}/../../libs/python35.lib)
   endif
   
