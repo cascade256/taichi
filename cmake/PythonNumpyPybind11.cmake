@@ -46,7 +46,14 @@ set(PYTHON_LIBRARIES ${PYTHON_LIBRARY})
 if (WIN32)
   link_directories(${PYTHON_LIBRARY_DIR}/../../libs)
   set(PYTHON_LIBRARIES ${PYTHON_LIBRARY_DIR}/../../libs/python3.lib)
-  set(PYTHON_LIBRARIES ${PYTHON_LIBRARY_DIR}/../../libs/python${PYTHON_VERSION}.lib)
+  if(${PYTHON_VERSION} EQUAL == "3.7") 
+	set(PYTHON_LIBRARIES ${PYTHON_LIBRARY_DIR}/../../libs/python37.lib)
+  else if(${PYTHON_VERSION} EQUAL "3.6) 
+	set(PYTHON_LIBRARIES ${PYTHON_LIBRARY_DIR}/../../libs/python36.lib)
+  else if(${PYTHON_VERSION} EQUAL "3.5) 
+	set(PYTHON_LIBRARIES ${PYTHON_LIBRARY_DIR}/../../libs/python35.lib)
+  endif
+  
 else()
   find_library(PYTHON_LIBRARY NAMES python${PYTHON_VERSION} python${PYTHON_VERSION}m PATHS ${PYTHON_LIBRARY_DIR}
           NO_DEFAULT_PATH NO_SYSTEM_ENVIRONMENT_PATH PATH_SUFFIXES x86_64-linux-gnu)
